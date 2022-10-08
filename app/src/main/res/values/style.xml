@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="start_cycle_button">
+        <item name="android:shape">oval</item>
+        <item name="android:layout_height">100dp</item>"
+        <item name="android:layout_width">wrap_content</item>"
+        <item name="cornerRadius">999dp</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:text">@string/go_name_for_cycle_btn</item>
+        <item name="android:backgroundTint">@color/white</item>
+    </style>
+
+    <style name="else_cycle_button">
+        <item name="android:shape">oval</item>
+        <item name="android:layout_height">100dp</item>"
+        <item name="android:layout_width">wrap_content</item>"
+        <item name="cornerRadius">999dp</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:textColor">@color/pink</item>
+        <item name="android:text">@string/else_name_for_cycle_btn</item>
+        <item name="android:backgroundTint">@color/white</item>
+    </style>
+</resources>

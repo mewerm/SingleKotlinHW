@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">JustHWForGB</string>
+    <string name="motivation_for_action_press">Let\'s try!</string>
+    <string name="waiting_message_button_press">Well, Im wait when red button will press</string>
+    <string name="result_message_button_press">Red button was pressed</string>
+    <string name="message_text_empty">   </string>
+    <string name="result_message_SimpleData_class_created">New object of SimpleDataClass was created!</string>
+    <string name="result_message_SimpleData_class_copied">The object of SimpleDataClass was copied!</string>
+    <string name="result_message_is_not_SimpleData_class">The object is not of SimpleDataClass</string>
+    <string name="simpleData_field_title_prefix">Content of field Name: </string>
+    <string name="simpleData_field_content_prefix">Content of field  Content: </string>
+
+    <string name="loop_is_ready_to_start">Cycle ready to… </string>
+    <string name="loop_started">Cycle is working… </string>
+    <string name="loop_finished">Cycle was end job!</string>
+    <string name="loop_yell_one">First!</string>
+    <string name="loop_yell_two">Second!</string>
+    <string name="loop_yell_calculation_is_over">Result: well done</string>
+    <string name="try_again">Try again</string>
+    <string name="start_cycle">Start cycle</string>
+    <string name="go_name_for_cycle_btn">GO</string>
+    <string name="else_name_for_cycle_btn">else</string>
+</resources>
