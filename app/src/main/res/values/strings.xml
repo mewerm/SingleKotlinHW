@@ -4,11 +4,6 @@
     <string name="waiting_message_button_press">Well, Im wait when red button will press</string>
     <string name="result_message_button_press">Red button was pressed</string>
     <string name="message_text_empty">   </string>
-    <string name="result_message_SimpleData_class_created">New object of SimpleDataClass was created!</string>
-    <string name="result_message_SimpleData_class_copied">The object of SimpleDataClass was copied!</string>
-    <string name="result_message_is_not_SimpleData_class">The object is not of SimpleDataClass</string>
-    <string name="simpleData_field_title_prefix">Content of field Name: </string>
-    <string name="simpleData_field_content_prefix">Content of field  Content: </string>
 
     <string name="loop_is_ready_to_start">Cycle ready to… </string>
     <string name="loop_started">Cycle is working… </string>

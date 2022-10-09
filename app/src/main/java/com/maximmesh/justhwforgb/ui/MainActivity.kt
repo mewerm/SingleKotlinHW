@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import com.maximmesh.justhwforgb.DataClass
+import com.maximmesh.justhwforgb.repository.DataClass
 import com.maximmesh.justhwforgb.R
 import com.maximmesh.justhwforgb.databinding.ActivityMainBinding
 
@@ -19,54 +19,13 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val dataClass = DataClass(title = "This is just title from Activity")
+        binding.resultClick.setTextColor(Color.RED)
 
         runOnUiThread {
             getButtonOneWork(dataClass)
-        }
-
-
-        with(binding) {
-            resultClick.setTextColor(Color.RED)
-
-            runOnUiThread {
-                buttonRestart.setOnClickListener {
-                    resultClick.setTextColor(Color.RED)
-                    resultClick.setBackgroundColor(Color.WHITE)
-
-                    resultClick.setText(R.string.waiting_message_button_press)
-                    buttonOne.visibility = View.VISIBLE
-                    buttonRestart.visibility = View.GONE
-                    dataClassTitle.setText(R.string.message_text_empty)
-                    dataClassDescription.setText(R.string.message_text_empty)
-
-                    loopResult.setText(R.string.message_text_empty)
-                    loopActionStatus.setText(R.string.loop_is_ready_to_start)
-
-                    buttonStartCycle.visibility = View.VISIBLE
-                    buttonStartCycle.isEnabled = true
-                }
-
-                runOnUiThread {
-                    buttonStartCycle.setOnClickListener {
-                        buttonStartCycle.visibility = View.GONE
-                        buttonOne.isEnabled = false
-                        buttonRestart.isEnabled = false
-                        loopFirstAndSecond(10)
-
-                    }
-                }
-
-                runOnUiThread {
-                    buttonElseStartCycle.setOnClickListener {
-                        buttonElseStartCycle.visibility = View.GONE
-                        buttonStartCycle.visibility = View.GONE
-                        buttonOne.isEnabled = false
-                        buttonRestart.isEnabled = false
-                        buttonElseStartCycle.isEnabled = false
-                        loopFirstAndSecond(10)
-                    }
-                }
-            }
+            getButtonRestartWork()
+            getButtonStartCycleWork()
+            getButtonElseStartCycleWork()
         }
     }
 
@@ -92,14 +51,16 @@ class MainActivity : AppCompatActivity() {
                 }
                 Thread.sleep(500)
             }
-            runOnUiThread {
-                binding.loopResult.textAlignment = View.TEXT_ALIGNMENT_CENTER
-                binding.loopResult.text = resources.getString(R.string.loop_yell_calculation_is_over)
-                binding.loopActionStatus.text = resources.getString(R.string.loop_finished)
-                binding.buttonElseStartCycle.visibility = View.VISIBLE
-                binding.buttonOne.isEnabled = true
-                binding.buttonRestart.isEnabled = true
-                binding.buttonElseStartCycle.isEnabled = true
+            runOnUiThread{
+                with(binding) {
+                    loopResult.textAlignment = View.TEXT_ALIGNMENT_CENTER
+                    loopResult.text = resources.getString(R.string.loop_yell_calculation_is_over)
+                    loopActionStatus.text = resources.getString(R.string.loop_finished)
+                    buttonElseStartCycle.visibility = View.VISIBLE
+                    buttonOne.isEnabled = true
+                    buttonRestart.isEnabled = true
+                    buttonElseStartCycle.isEnabled = true
+                }
             }
         }.start()
     }
@@ -117,6 +78,51 @@ class MainActivity : AppCompatActivity() {
                 buttonOne.visibility = View.GONE
                 buttonElseStartCycle.visibility = View.GONE
                 buttonRestart.visibility = View.VISIBLE
+            }
+        }
+    }
+
+    private fun getButtonRestartWork() {
+        with(binding) {
+            buttonRestart.setOnClickListener {
+                resultClick.setTextColor(Color.RED)
+                resultClick.setBackgroundColor(Color.WHITE)
+
+                resultClick.setText(R.string.waiting_message_button_press)
+                buttonOne.visibility = View.VISIBLE
+                buttonRestart.visibility = View.GONE
+                dataClassTitle.setText(R.string.message_text_empty)
+                dataClassDescription.setText(R.string.message_text_empty)
+
+                loopResult.setText(R.string.message_text_empty)
+                loopActionStatus.setText(R.string.loop_is_ready_to_start)
+
+                buttonStartCycle.visibility = View.VISIBLE
+                buttonStartCycle.isEnabled = true
+            }
+        }
+    }
+
+    private fun getButtonStartCycleWork() {
+        with(binding) {
+            buttonStartCycle.setOnClickListener {
+                buttonStartCycle.visibility = View.GONE
+                buttonOne.isEnabled = false
+                buttonRestart.isEnabled = false
+                loopFirstAndSecond(10)
+            }
+        }
+    }
+
+    private fun getButtonElseStartCycleWork() {
+        with(binding) {
+            buttonElseStartCycle.setOnClickListener {
+                buttonElseStartCycle.visibility = View.GONE
+                buttonStartCycle.visibility = View.GONE
+                buttonOne.isEnabled = false
+                buttonRestart.isEnabled = false
+                buttonElseStartCycle.isEnabled = false
+                loopFirstAndSecond(10)
             }
         }
     }

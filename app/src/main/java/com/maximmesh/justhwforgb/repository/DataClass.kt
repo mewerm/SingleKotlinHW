@@ -1,4 +1,4 @@
-package com.maximmesh.justhwforgb
+package com.maximmesh.justhwforgb.repository
 
 data class DataClass(
     val title: String = "This is too much despair I can't to be in a screen app =(",
